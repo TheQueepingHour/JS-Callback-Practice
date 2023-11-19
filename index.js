@@ -2,7 +2,25 @@ const inventory = newInventory()
 move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
-move(character).to(100, 250)
+let direction = null
+let x = 100
+let y = 250
+
+if (direction === 'north') {
+    y = y + 1
+}
+if (direction === 'east') {
+    x = x + 1
+}
+if (direction === 'south') {
+    y = y - 1
+}
+if (direction === 'west') {
+    x = x - 1
+}
+character.style.left = x + 'px'
+character.style.bottom = y + 'px'
+// move(character).to(100, 250)
 
 
 move(newImage('assets/tree.png')).to(200, 450)
